@@ -29,7 +29,7 @@ export default class GetUser extends Component {
     .then(result => result.json())
        .then(json => {
         this.setState({
-          isLoaded: true,
+          isLoaded: true, 
           items: json.result,
         })
       })
@@ -41,137 +41,17 @@ export default class GetUser extends Component {
     var department = [];
     var name = [];
     var number = [];
-    var sortedDepartment = [];
-    var sortedName = [];
-    var sortedNumber = [];
-    var unsortedDepartment = [];
-    var unsortedName = [];
-    var unsortedNumber = [];
-    var employeeDepart = [];
-    const itemJsx = [
-      name,
-      department,
-      number
-    ];
-  
-    console.log(items);
-    console.log(itemJsx);
 
     items.forEach((item) => {
         department.push(item.department);
         name.push(item.name);
         number.push(item.number);
-        unsortedDepartment.push(item.department);
-        unsortedName.push(item.name);
-        unsortedNumber.push(item.number);
     });
-
-    
-    department.sort();
-    name.sort();
-    number.sort();
-
-    var departNum = 0;
-    var prevDepartmentCheck;
-    for (var i = 0; i < department.length; i++) {
-      var check = department[i];
-      if (check !== prevDepartmentCheck) {
-        prevDepartmentCheck = check;
-        sortedDepartment.push(check);
-        departNum++;
-      }
-    }
-    
-    console.log(sortedDepartment);
-    console.log(departNum);
-
-    var nameNum = 0;
-    var prevNameCheck;
-    for (var i = 0; i < name.length; i++) {
-      var check = name[i];
-      if (check !== prevNameCheck) {
-        prevNameCheck = check;
-        sortedName.push(check);
-        nameNum++;
-      }
-    }
-    
-    console.log(sortedName);
-    console.log(nameNum);
-
-    var numberNum = 0;
-    var prevNumberCheck;
-    for (var i = 0; i < number.length; i++) {
-      var check = number[i];
-      if (check !== prevNumberCheck) {
-        prevNumberCheck = check;
-        sortedNumber.push(check);
-        numberNum++;
-      }
-    }
-    
-    console.log(sortedNumber);
-    console.log(numberNum);
-    console.log(unsortedName);
-    
-    for (var i = 0; i < sortedName.length; i++) {
-      var b = 0;
-      var deptString = "";
-
-      for (var a = 0; a < name.length; a++) {
-        console.log("looped");
-        if (sortedName[i] === unsortedName[a]) {
-          // if (a === 0) {
-          //   deptString = deptString + " " + unsortedDepartment[a];
-          // } else {
-          deptString = deptString +  ", " + unsortedDepartment[a];
-          }
-        //}
-      }
-      employeeDepart.push(deptString);
-      b++;
-    }
-
-    // for (var i = 0; i < employeeDepart.length; i++) {
-    //   employeeDepart[i] = "{`" + employeeDepart[i] + "`}"; 
-    // }
-
-    console.log(employeeDepart);
-    console.log(sortedItemJsx);
-    console.log(JSON.stringify(sortedItemJsx));
-
-    const sortedItemJsx = [
-      {
-      "name": sortedName[0],
-      "department": employeeDepart[0],
-      "number": sortedNumber[0]
-      },
-      {
-        "name": sortedName[1],
-        "department": employeeDepart[1],
-        "number": sortedNumber[1]
-      },
-      {
-        "name": sortedName[2],
-        "department": employeeDepart[2],
-        "number": sortedNumber[2]
-      },
-      {
-        "name": sortedName[3],
-        "department": employeeDepart[3],
-        "number": sortedNumber[3]
-      },
-      {
-        "name": sortedName[4],
-        "department": employeeDepart[4],
-        "number": sortedNumber[4]
-      },
-    ]
     
     return (
       <div className ="GetUser">
         <ReactTable
-          data = {sortedItemJsx}
+          data = {items}
           columns = {[
             {
               Header: "Name",
