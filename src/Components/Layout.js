@@ -12,7 +12,7 @@ constructor(){
         return (
             <div>
                 <Header />
-                <Footer />
+                {/* <Footer /> */}
             </div>
         )
     }
