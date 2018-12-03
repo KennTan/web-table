@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Components/GetUser.js';
 import './Components/Layout.js';
 import './App.css';
 import Layout from './Components/Layout.js';

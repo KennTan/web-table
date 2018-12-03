@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default class Nav extends React.Component {
 	constructor(){
@@ -14,8 +15,11 @@ export default class Nav extends React.Component {
 	}
 
 	render() {
+		const { location } = this.props;
 		const { collapsed } = this.state;
 		const navClass = collapsed ? "collapse" : "";
+		// const gowildClass = location.pathname.match(/^\/Gowild/) ? "active" : "";
+    // const nusblk71Class = location.pathname.match(/^\/NUSBlk71/) ? "active" : "";
 
 		return (
 			<nav class="navbar navbar-inverse navbar-fixed-top navbar-expand-lg navbar-dark bg-dark static-top" role="navigation">
@@ -27,10 +31,10 @@ export default class Nav extends React.Component {
 				</div>
 				<div class={"navbar-collapse " + navClass} id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li class="nav-item">
-							<a class="nav-link" href="Gowild">Gowild</a>
+						<li class="gowild" onClick="./Pages/Gowild">
+							<a class="nav-link" href="GoWild">Gowild</a>
 						</li>
-						<li class="nav-item">
+						<li class="nusblk71">
 							<a class="nav-link" href="NUS-Blk-71">NUS Blk 71</a>
 						</li>
 					</ul>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactTable from 'react-table';
 import "react-table/react-table.css";
 
-export default class GetUser extends Component {
+export default class Gowild extends Component {
   constructor(){
     super();
     this.state = {
@@ -18,7 +18,7 @@ export default class GetUser extends Component {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify ({
-        'projectid': '46b34b2b-ba11-4bac-8af2-11844dcb64cd',
+        'projectid': '8af27228-b960-4d9b-be44-8b82fb71b14a',
       }),
       method: "POST"
     }
@@ -72,13 +72,19 @@ export default class GetUser extends Component {
     ];
 
     return (
-      <div style={{padding:"20px"}}>
+      <div style={{padding:"10px"}}>
+				<div class="col-lg-">
+					<header>
+						<center><strong><font size="30">Gowild</font></strong></center>	
+					</header>
+				</div>
         <ReactTable
           data = {items}
           columns = {columns}
           filterable = {true}
           defaultPageSize = {10}
           className="-striped -highlight"
+          noDataText="No data found"
         />
       </div>
     )

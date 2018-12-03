@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactTable from 'react-table';
 import "react-table/react-table.css";
 
-export default class GetUser extends Component {
+export default class NUSBlk71 extends Component {
   constructor(){
     super();
     this.state = {
@@ -72,13 +72,19 @@ export default class GetUser extends Component {
     ];
 
     return (
-      <div style={{padding:"20px"}}>
+      <div style={{padding:"10px"}}>
+      <div class="col-lg-">
+					<header>
+						<center><strong><font size="30">NUS Blk 71</font></strong></center>	
+					</header>
+				</div>
         <ReactTable
           data = {items}
           columns = {columns}
           filterable = {true}
           defaultPageSize = {10}
           className="-striped -highlight"
+          noDataText="No data found"
         />
       </div>
     )
