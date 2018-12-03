@@ -16,7 +16,7 @@ const app = document.getElementById('app');
 ReactDOM.render((
 	<BrowserRouter>
 		<App/>
-</BrowserRouter>)
+	</BrowserRouter>)
 ,app);
 
 // If you want your app to work offline and load faster, you can change

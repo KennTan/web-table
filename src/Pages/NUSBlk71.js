@@ -74,11 +74,11 @@ export default class NUSBlk71 extends Component {
       <div style={{paddingTop:"10px", paddingLeft:"50px", paddingRight: "50px", paddingBottom:"20px"}}>
       <div class="col-lg-">
         <header>
-          <center><strong><font size="30">NUS Blk 71</font></strong></center>	
+          <center><h1>NUS Blk 71</h1></center>
         </header>
         <div style={{padding:"10px"}}>
           <center>
-            <button class="btn btn-success" style={{marginRight:"5px"}}>Add</button>
+            <button class="btn btn-primary" style={{marginRight:"5px"}}>Add</button>
             <button class="btn btn-success" style={{marginLeft:"5px"}}>Edit</button>
           </center>
         </div>

@@ -74,11 +74,11 @@ export default class Gowild extends Component {
       <div style={{paddingTop:"10px", paddingLeft:"50px", paddingRight: "50px", paddingBottom:"20px"}}>
 				<div class="col-lg-">
 					<header>
-						<center><strong><font size="30">Gowild</font></strong></center>	
+						<center><h1>Gowild</h1></center>	
 					</header>
           <div style={{padding:"10px"}}>
             <center>
-              <button class="btn btn-success" style={{marginRight:"5px"}}>Add</button>
+              <button class="btn btn-primary" style={{marginRight:"5px"}}>Add</button>
               <button class="btn btn-success" style={{marginLeft:"5px"}}>Edit</button>
             </center>
           </div>
