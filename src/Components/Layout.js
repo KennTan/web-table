@@ -2,17 +2,15 @@ import React from "react";
 
 import Footer from "./Footer";
 import Header from "./Header";
+import GetUser from "./GetUser";
 
 export default class Layout extends React.Component {
-constructor(){
-    super();
-}
-
     render(){
         return (
             <div>
                 <Header />
-                {/* <Footer /> */}
+                <GetUser />
+                <Footer />
             </div>
         )
     }
