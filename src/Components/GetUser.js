@@ -27,7 +27,6 @@ export default class GetUser extends Component {
     .then(result => result.json())
        .then(json => {
         this.setState({
-          isLoaded: true, 
           items: json.result,
         })
       })
