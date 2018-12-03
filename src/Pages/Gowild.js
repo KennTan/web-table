@@ -56,7 +56,7 @@ export default class Gowild extends Component {
         Cell: props => {
           return (
             <div>
-            <button>
+            <button class="btn btn-danger btn-sm">
               Delete
             </button>
           </div>
@@ -65,24 +65,29 @@ export default class Gowild extends Component {
         filterable: false,
         sortable: false,
         style: {
-          padding: "5",
           textAlign: "center",
         },
       }
     ];
 
     return (
-      <div style={{padding:"10px"}}>
+      <div style={{paddingTop:"10px", paddingLeft:"50px", paddingRight: "50px", paddingBottom:"20px"}}>
 				<div class="col-lg-">
 					<header>
 						<center><strong><font size="30">Gowild</font></strong></center>	
 					</header>
+          <div style={{padding:"10px"}}>
+            <center>
+              <button class="btn btn-success" style={{marginRight:"5px"}}>Add</button>
+              <button class="btn btn-success" style={{marginLeft:"5px"}}>Edit</button>
+            </center>
+          </div>
 				</div>
         <ReactTable
           data = {items}
           columns = {columns}
           filterable = {true}
-          defaultPageSize = {10}
+          defaultPageSize = {8}
           className="-striped -highlight"
           noDataText="No data found"
         />
