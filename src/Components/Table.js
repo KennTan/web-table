@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
+import Edit from './EditModal';
+import Delete from './DeleteModal';
+import Add from './AddModal';
+
 import ReactTable from 'react-table';
 import "react-table/react-table.css";
-import Edit from './Modals';
 
 export default class Table extends Component {
   constructor(){
     super();
     this.state = {
-      items: [],
-    }
-  }
-
+			items: [],
+		}
+	}
+	
   componentDidMount(){
 		const projectID = this.props.projectID;
-		console.log(projectID);
-
     const param = {
       headers: {
         'Accept': 'application/json',
@@ -33,24 +34,23 @@ export default class Table extends Component {
           items: json.result,
         })
       })
-  }
-
+	}
+	
   render(){
-		const editModal = this.props.editModal;
 		const { items } = this.state;
 		const company = this.props.company;
     const columns = [
-      {
+			{
         Header: () => <strong>Name</strong>,
-        accessor: "name"
+				accessor: "name",
       },
       {
         Header: () => <strong>Department</strong>,
-        accessor: "department"
+				accessor: "department",
       },
       {
         Header: () => <strong>Number</strong>,
-        accessor:"number",
+				accessor:"number",
         filterable: false,
         sortable: false,
         width: 150
@@ -58,15 +58,7 @@ export default class Table extends Component {
       {
         Header: () => <strong>Delete</strong>,
         width: 85,
-        Cell: props => {
-          return (
-            <div>
-            <button class="btn btn-danger btn-sm">
-              Delete
-            </button>
-          </div>
-          )
-        },
+        Cell: props => { return <Delete/> },
         filterable: false,
         sortable: false,
         style: {
@@ -76,12 +68,8 @@ export default class Table extends Component {
 			{
         Header: () => <strong>Edit</strong>,
         width: 85,
-        Cell: props => {
-          return (
-						<Edit/>
-          )
-        },
-        filterable: false,
+        Cell: props => { return <Edit/> },
+				filterable: false,
         sortable: false,
         style: {
           textAlign: "center",
@@ -95,10 +83,8 @@ export default class Table extends Component {
 					<header>
 						<center><h1>{company}</h1></center>	
 					</header>
-          <div style={{padding:"10px"}}>
-            <center>
-							<button class="btn btn-primary">Add</button>
-            </center>
+          <div style={{paddingBottom:"10px"}}>
+            <Add/>
           </div>
 				</div>
         <ReactTable
