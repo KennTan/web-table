@@ -3,14 +3,8 @@ import './Components/Layout.js';
 import './App.css';
 import Layout from './Components/Layout.js';
 
-class App extends Component {
+export default class App extends Component {
   render(){
-    return (
-      <div>
-        <Layout/>
-      </div>
-    )
+    return <Layout/>
   }
 } 
-
-export default App

@@ -6,8 +6,8 @@ export default class Footer extends React.Component {
   render() {
 
 		const Tips = () =>
-		<div style={{ textAlign: "center", color: "grey"}}>
-			<em>Tip: Cell filtering is case-sensitive!</em>
+		<div style={{ textAlign: "center"}}>
+			<em class="form-text text-muted">Tip: Cell filtering is case-sensitive!</em>
 		</div>;
 
     return (
